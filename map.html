@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0231148528b3f54ec1f69fd24f3c6677 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0231148528b3f54ec1f69fd24f3c6677" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0231148528b3f54ec1f69fd24f3c6677 = L.map(
+                "map_0231148528b3f54ec1f69fd24f3c6677",
+                {
+                    center: [43.7696, 11.2558],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+
+            
+
+        
+    
+            var tile_layer_97e79c5bc39fc7ea04c9c425f6a6b0f7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+            var marker_cf0466be6b52c1feca1fb4f37e3fbb03 = L.marker(
+                [43.6987, 10.4033],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_c454febd4a5e578db37ceed62949da9b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_541642deb1068a62aab9912c36f65973 = $(`<div id="html_541642deb1068a62aab9912c36f65973" style="width: 100.0%; height: 100.0%;"><b>Pisa Airport (PSA)</b><br>Day 1 – Arrival / Day 4 – Departure</div>`)[0];
+            popup_c454febd4a5e578db37ceed62949da9b.setContent(html_541642deb1068a62aab9912c36f65973);
+        
+
+        marker_cf0466be6b52c1feca1fb4f37e3fbb03.bindPopup(popup_c454febd4a5e578db37ceed62949da9b)
+        ;
+
+        
+    
+    
+            marker_cf0466be6b52c1feca1fb4f37e3fbb03.bindTooltip(
+                `<div>
+                     Pisa Airport (PSA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2799b494625fb684d2541e38ffd3845c = L.marker(
+                [43.7746, 11.2469],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_e2b5cccb13bf04f511e0a8aa4b69ce15 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_43a1690bb047a0fd811aea9d627eaeab = $(`<div id="html_43a1690bb047a0fd811aea9d627eaeab" style="width: 100.0%; height: 100.0%;"><b>Circolo Unificato – Via della Scala 68 (Lodging)</b><br>Hotel / check‑in</div>`)[0];
+            popup_e2b5cccb13bf04f511e0a8aa4b69ce15.setContent(html_43a1690bb047a0fd811aea9d627eaeab);
+        
+
+        marker_2799b494625fb684d2541e38ffd3845c.bindPopup(popup_e2b5cccb13bf04f511e0a8aa4b69ce15)
+        ;
+
+        
+    
+    
+            marker_2799b494625fb684d2541e38ffd3845c.bindTooltip(
+                `<div>
+                     Circolo Unificato – Via della Scala 68 (Lodging)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d3344cfa933229c299b76f6a1949636 = L.marker(
+                [43.7731, 11.2556],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_ffd9e5c70154ecd4dc83d264eb40db86 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ace116e5149084d2c5a5817cd41bd61e = $(`<div id="html_ace116e5149084d2c5a5817cd41bd61e" style="width: 100.0%; height: 100.0%;"><b>Florence Cathedral (Duomo)</b><br>Day 2 – Visit & Dome climb</div>`)[0];
+            popup_ffd9e5c70154ecd4dc83d264eb40db86.setContent(html_ace116e5149084d2c5a5817cd41bd61e);
+        
+
+        marker_6d3344cfa933229c299b76f6a1949636.bindPopup(popup_ffd9e5c70154ecd4dc83d264eb40db86)
+        ;
+
+        
+    
+    
+            marker_6d3344cfa933229c299b76f6a1949636.bindTooltip(
+                `<div>
+                     Florence Cathedral (Duomo)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4bbf4ccb73576392fc9ff5ee660f13f5 = L.marker(
+                [43.7696, 11.2558],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_d702a2d7866b6648633bb943e2595e5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f6e94da48d0f0b405609ec870a701b7c = $(`<div id="html_f6e94da48d0f0b405609ec870a701b7c" style="width: 100.0%; height: 100.0%;"><b>Piazza della Signoria</b><br>Historic centre</div>`)[0];
+            popup_d702a2d7866b6648633bb943e2595e5c.setContent(html_f6e94da48d0f0b405609ec870a701b7c);
+        
+
+        marker_4bbf4ccb73576392fc9ff5ee660f13f5.bindPopup(popup_d702a2d7866b6648633bb943e2595e5c)
+        ;
+
+        
+    
+    
+            marker_4bbf4ccb73576392fc9ff5ee660f13f5.bindTooltip(
+                `<div>
+                     Piazza della Signoria
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77f23d2d72db5d79a418bde2d249be98 = L.marker(
+                [43.7679, 11.2531],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_ff25a7c0b80a26f8b58ad7e5aafde56f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fd34680fd3f98382f06ebf849360a53d = $(`<div id="html_fd34680fd3f98382f06ebf849360a53d" style="width: 100.0%; height: 100.0%;"><b>Ponte Vecchio</b><br>Bridge</div>`)[0];
+            popup_ff25a7c0b80a26f8b58ad7e5aafde56f.setContent(html_fd34680fd3f98382f06ebf849360a53d);
+        
+
+        marker_77f23d2d72db5d79a418bde2d249be98.bindPopup(popup_ff25a7c0b80a26f8b58ad7e5aafde56f)
+        ;
+
+        
+    
+    
+            marker_77f23d2d72db5d79a418bde2d249be98.bindTooltip(
+                `<div>
+                     Ponte Vecchio
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c025e96a2a62905a1d6a1e37f431fd3b = L.marker(
+                [43.7667, 11.2505],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_5becb25bf7114a4f25d6a3fe6efba299 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_349cdc442425372aae52c3906bdc84ef = $(`<div id="html_349cdc442425372aae52c3906bdc84ef" style="width: 100.0%; height: 100.0%;"><b>Palazzo Pitti</b><br>Museum & Boboli</div>`)[0];
+            popup_5becb25bf7114a4f25d6a3fe6efba299.setContent(html_349cdc442425372aae52c3906bdc84ef);
+        
+
+        marker_c025e96a2a62905a1d6a1e37f431fd3b.bindPopup(popup_5becb25bf7114a4f25d6a3fe6efba299)
+        ;
+
+        
+    
+    
+            marker_c025e96a2a62905a1d6a1e37f431fd3b.bindTooltip(
+                `<div>
+                     Palazzo Pitti
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29602ef66cbfda583e67c79dce07b10f = L.marker(
+                [43.7761, 11.2479],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_74f538b3d134bfc9594baca7a952d33b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a52eddef563cdc18d2c721f78748d474 = $(`<div id="html_a52eddef563cdc18d2c721f78748d474" style="width: 100.0%; height: 100.0%;"><b>Santa Maria Novella Station</b><br>Main station</div>`)[0];
+            popup_74f538b3d134bfc9594baca7a952d33b.setContent(html_a52eddef563cdc18d2c721f78748d474);
+        
+
+        marker_29602ef66cbfda583e67c79dce07b10f.bindPopup(popup_74f538b3d134bfc9594baca7a952d33b)
+        ;
+
+        
+    
+    
+            marker_29602ef66cbfda583e67c79dce07b10f.bindTooltip(
+                `<div>
+                     Santa Maria Novella Station
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab946052603633ee38de49f221d7f6b4 = L.marker(
+                [43.7629, 11.2655],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_94b7d0535ac984671f876dd891333bbb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b4f66ec6a18db6c62ed99ccf46d57bef = $(`<div id="html_b4f66ec6a18db6c62ed99ccf46d57bef" style="width: 100.0%; height: 100.0%;"><b>Piazzale Michelangelo</b><br>City panorama</div>`)[0];
+            popup_94b7d0535ac984671f876dd891333bbb.setContent(html_b4f66ec6a18db6c62ed99ccf46d57bef);
+        
+
+        marker_ab946052603633ee38de49f221d7f6b4.bindPopup(popup_94b7d0535ac984671f876dd891333bbb)
+        ;
+
+        
+    
+    
+            marker_ab946052603633ee38de49f221d7f6b4.bindTooltip(
+                `<div>
+                     Piazzale Michelangelo
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_98923dce8fcbeb24c0677793e3a5ff17 = L.marker(
+                [43.7771, 11.253],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_081f5016172e1c3b3324b1a61bc3e120 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a385b0f9e9fd4da7a0b7b461baab39d0 = $(`<div id="html_a385b0f9e9fd4da7a0b7b461baab39d0" style="width: 100.0%; height: 100.0%;"><b>Mercato Centrale (Lunch Fri)</b><br>Food hall</div>`)[0];
+            popup_081f5016172e1c3b3324b1a61bc3e120.setContent(html_a385b0f9e9fd4da7a0b7b461baab39d0);
+        
+
+        marker_98923dce8fcbeb24c0677793e3a5ff17.bindPopup(popup_081f5016172e1c3b3324b1a61bc3e120)
+        ;
+
+        
+    
+    
+            marker_98923dce8fcbeb24c0677793e3a5ff17.bindTooltip(
+                `<div>
+                     Mercato Centrale (Lunch Fri)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1ab6cc7b588c76cf71264e214e77a31b = L.marker(
+                [43.7758, 11.2519],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_7e2ea24dbad474414b86ab26f66e8f35 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_342b0aca766e2c5fbf8ef1fdf54f6cec = $(`<div id="html_342b0aca766e2c5fbf8ef1fdf54f6cec" style="width: 100.0%; height: 100.0%;"><b>Canto de’ Nelli (Dinner Thu – booked)</b><br>San Lorenzo</div>`)[0];
+            popup_7e2ea24dbad474414b86ab26f66e8f35.setContent(html_342b0aca766e2c5fbf8ef1fdf54f6cec);
+        
+
+        marker_1ab6cc7b588c76cf71264e214e77a31b.bindPopup(popup_7e2ea24dbad474414b86ab26f66e8f35)
+        ;
+
+        
+    
+    
+            marker_1ab6cc7b588c76cf71264e214e77a31b.bindTooltip(
+                `<div>
+                     Canto de’ Nelli (Dinner Thu – booked)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0ef852c4df819ef9097c042012b2c684 = L.marker(
+                [43.7709, 11.2573],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_769ae553d4be27181ce964ce27df808a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3b0c9846238a55ae33c42211fee758b4 = $(`<div id="html_3b0c9846238a55ae33c42211fee758b4" style="width: 100.0%; height: 100.0%;"><b>All’Antico Vinaio (Best sandwiches)</b><br>Panini & schiacciata</div>`)[0];
+            popup_769ae553d4be27181ce964ce27df808a.setContent(html_3b0c9846238a55ae33c42211fee758b4);
+        
+
+        marker_0ef852c4df819ef9097c042012b2c684.bindPopup(popup_769ae553d4be27181ce964ce27df808a)
+        ;
+
+        
+    
+    
+            marker_0ef852c4df819ef9097c042012b2c684.bindTooltip(
+                `<div>
+                     All’Antico Vinaio (Best sandwiches)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9eb4fd31c26a88f68239a7df47c83b0d = L.marker(
+                [43.7689, 11.2469],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_aeb5f34a69a3b02d84061a8972e4c0b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_edd7e2b86323d63647e6d836509ad1b9 = $(`<div id="html_edd7e2b86323d63647e6d836509ad1b9" style="width: 100.0%; height: 100.0%;"><b>Piazza Santo Spirito (Nightlife)</b><br>After‑dinner Thu</div>`)[0];
+            popup_aeb5f34a69a3b02d84061a8972e4c0b4.setContent(html_edd7e2b86323d63647e6d836509ad1b9);
+        
+
+        marker_9eb4fd31c26a88f68239a7df47c83b0d.bindPopup(popup_aeb5f34a69a3b02d84061a8972e4c0b4)
+        ;
+
+        
+    
+    
+            marker_9eb4fd31c26a88f68239a7df47c83b0d.bindTooltip(
+                `<div>
+                     Piazza Santo Spirito (Nightlife)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_497479ec87d9818e926b69473d96bcff = L.marker(
+                [43.7705, 11.2448],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_5bb1ca9c032a4b0ac7cabac73ac664ec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e5ae9d59b71327adc314b0fe02ffbab5 = $(`<div id="html_e5ae9d59b71327adc314b0fe02ffbab5" style="width: 100.0%; height: 100.0%;"><b>San Frediano District (Nightlife)</b><br>After‑dinner Fri</div>`)[0];
+            popup_5bb1ca9c032a4b0ac7cabac73ac664ec.setContent(html_e5ae9d59b71327adc314b0fe02ffbab5);
+        
+
+        marker_497479ec87d9818e926b69473d96bcff.bindPopup(popup_5bb1ca9c032a4b0ac7cabac73ac664ec)
+        ;
+
+        
+    
+    
+            marker_497479ec87d9818e926b69473d96bcff.bindTooltip(
+                `<div>
+                     San Frediano District (Nightlife)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5961c37fd29549dfaf5d97c5d9d61779 = L.marker(
+                [43.7706, 11.2447],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_9663f4a790c192f2c60dc41e6a6bebc0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5655d3ad817efe1cb300dd3ede7d063 = $(`<div id="html_f5655d3ad817efe1cb300dd3ede7d063" style="width: 100.0%; height: 100.0%;"><b>Piazza del Carmine (Free Jazz Sat 21:00)</b><br>Firenze Jazz Festival</div>`)[0];
+            popup_9663f4a790c192f2c60dc41e6a6bebc0.setContent(html_f5655d3ad817efe1cb300dd3ede7d063);
+        
+
+        marker_5961c37fd29549dfaf5d97c5d9d61779.bindPopup(popup_9663f4a790c192f2c60dc41e6a6bebc0)
+        ;
+
+        
+    
+    
+            marker_5961c37fd29549dfaf5d97c5d9d61779.bindTooltip(
+                `<div>
+                     Piazza del Carmine (Free Jazz Sat 21:00)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c0a74a71245c5b8293f7ba9573db5d20 = L.marker(
+                [43.3188, 11.3308],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_0370c3f6faeadaad788fba6576af490c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9183acb93a20ecb93d678f70845e70ad = $(`<div id="html_9183acb93a20ecb93d678f70845e70ad" style="width: 100.0%; height: 100.0%;"><b>Piazza del Campo – Siena</b><br>Day 3 – Morning</div>`)[0];
+            popup_0370c3f6faeadaad788fba6576af490c.setContent(html_9183acb93a20ecb93d678f70845e70ad);
+        
+
+        marker_c0a74a71245c5b8293f7ba9573db5d20.bindPopup(popup_0370c3f6faeadaad788fba6576af490c)
+        ;
+
+        
+    
+    
+            marker_c0a74a71245c5b8293f7ba9573db5d20.bindTooltip(
+                `<div>
+                     Piazza del Campo – Siena
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c1b5767cfed04c2f6e035146e38862e0 = L.marker(
+                [43.4628, 11.0467],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_1c0437727b1ae5be24aa38851a43fcf2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_921059d3243d31e703cdc8f1ebd69dbd = $(`<div id="html_921059d3243d31e703cdc8f1ebd69dbd" style="width: 100.0%; height: 100.0%;"><b>Altezza Winery (Aperitivo Sat 17:00)</b><br>Booked wine tasting</div>`)[0];
+            popup_1c0437727b1ae5be24aa38851a43fcf2.setContent(html_921059d3243d31e703cdc8f1ebd69dbd);
+        
+
+        marker_c1b5767cfed04c2f6e035146e38862e0.bindPopup(popup_1c0437727b1ae5be24aa38851a43fcf2)
+        ;
+
+        
+    
+    
+            marker_c1b5767cfed04c2f6e035146e38862e0.bindTooltip(
+                `<div>
+                     Altezza Winery (Aperitivo Sat 17:00)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a19b4404cd3fa12a826f2e13eaf8703e = L.marker(
+                [43.4671, 11.042],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_b3fde404355e8c0647a5ff3ab3ca5512 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_391c6e773f64ae4276b415d1f5eee8f5 = $(`<div id="html_391c6e773f64ae4276b415d1f5eee8f5" style="width: 100.0%; height: 100.0%;"><b>Piazza della Cisterna – San Gimignano</b><br>Day 3 – Afternoon</div>`)[0];
+            popup_b3fde404355e8c0647a5ff3ab3ca5512.setContent(html_391c6e773f64ae4276b415d1f5eee8f5);
+        
+
+        marker_a19b4404cd3fa12a826f2e13eaf8703e.bindPopup(popup_b3fde404355e8c0647a5ff3ab3ca5512)
+        ;
+
+        
+    
+    
+            marker_a19b4404cd3fa12a826f2e13eaf8703e.bindTooltip(
+                `<div>
+                     Piazza della Cisterna – San Gimignano
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed1958e1a1e7c111b71f7f245b3f2094 = L.marker(
+                [43.723, 10.3966],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_94a3356f77de00e0fb03e5942467ac53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b351b5ee47096bef74730b8bd5f2f801 = $(`<div id="html_b351b5ee47096bef74730b8bd5f2f801" style="width: 100.0%; height: 100.0%;"><b>Leaning Tower of Pisa</b><br>Day 4 – Visit</div>`)[0];
+            popup_94a3356f77de00e0fb03e5942467ac53.setContent(html_b351b5ee47096bef74730b8bd5f2f801);
+        
+
+        marker_ed1958e1a1e7c111b71f7f245b3f2094.bindPopup(popup_94a3356f77de00e0fb03e5942467ac53)
+        ;
+
+        
+    
+    
+            marker_ed1958e1a1e7c111b71f7f245b3f2094.bindTooltip(
+                `<div>
+                     Leaning Tower of Pisa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_90a05c897ba666d4df871b684262b59e = L.marker(
+                [43.716, 10.4017],
+                {}
+            ).addTo(map_0231148528b3f54ec1f69fd24f3c6677);
+        
+    
+        var popup_4832415446e7ddb2055fbb35b65a9328 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_22bab628e02d0556d6adad9ca5be7c8d = $(`<div id="html_22bab628e02d0556d6adad9ca5be7c8d" style="width: 100.0%; height: 100.0%;"><b>Pisa city centre</b><br>Lunch / coffee</div>`)[0];
+            popup_4832415446e7ddb2055fbb35b65a9328.setContent(html_22bab628e02d0556d6adad9ca5be7c8d);
+        
+
+        marker_90a05c897ba666d4df871b684262b59e.bindPopup(popup_4832415446e7ddb2055fbb35b65a9328)
+        ;
+
+        
+    
+    
+            marker_90a05c897ba666d4df871b684262b59e.bindTooltip(
+                `<div>
+                     Pisa city centre
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

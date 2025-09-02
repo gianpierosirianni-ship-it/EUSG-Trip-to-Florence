@@ -1,0 +1,2 @@
+Complete static app: itinerary, checklist, room prices, key places with links, cocktail bars, interactive map, PDF, ICS & share button. Updated: Dinner Thu Canto de’ Nelli (booked), Dinner Fri TBD.
+Open index.html.

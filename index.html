@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team Trip – Florence / Siena / San Gimignano / Pisa (11–14 Sep 2025)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b111a; --panel:#0e1624; --card:#111b2b; --line:#21314b;
+    --text:#edf2f7; --muted:#9ab0c6; --brand:#ffd36a; --accent:#7dd3fc;
+    --grad: radial-gradient(1200px 600px at 10% -10%, #19345555, transparent 60%),
+            radial-gradient(1000px 500px at 110% 0%, #122e5050, transparent 55%),
+            linear-gradient(180deg, #0a111a 0%, #0b111a 100%);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;background:var(--bg);color:var(--text)}
+  .hero{background:var(--grad);padding:36px 20px 28px;border-bottom:1px solid var(--line)}
+  .container{max-width:1100px;margin:0 auto;padding:0 18px}
+  h1{margin:0;font-size:30px;letter-spacing:.2px} .sub{color:var(--muted);margin:10px 0 16px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:14px;padding:12px 16px;font-weight:800;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .btn.primary{background:var(--brand);color:#0a0e18}
+  .btn.ghost{background:linear-gradient(180deg,#121d2c,#0e1726);color:var(--text);border:1px solid var(--line)}
+  .wrap{max-width:1100px;margin:0 auto;padding:18px}
+  .grid{display:grid;gap:18px} @media(min-width:960px){.grid{grid-template-columns:1.2fr .8fr}}
+  .card{background:linear-gradient(180deg,#0f1828,#0c1422);border-radius:18px;padding:18px;border:1px solid var(--line);box-shadow:0 16px 44px rgba(7,12,20,.45)}
+  .title{margin:0 0 12px;font-weight:800;letter-spacing:.2px}
+  .pill{display:inline-block;background:#152238;color:#cfe0f3;padding:6px 12px;border-radius:999px;font-size:12px;margin:0 6px 10px 0;border:1px solid #22324a}
+  .row{display:flex;gap:12px;margin:8px 0;align-items:flex-start} .time{min-width:100px;font-weight:800;opacity:.9}
+  .place{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;background:#0b1524}
+  .twoCol{display:grid;gap:12px;grid-template-columns:1fr} @media(min-width:620px){.twoCol{grid-template-columns:1fr 1fr}}
+  .keyplaces{display:grid;gap:12px;grid-template-columns:1fr} @media(min-width:900px){.keyplaces{grid-template-columns:1fr 1fr 1fr 1fr}}
+  .kp{background:#0b1524;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px;transition:transform .12s ease, border-color .12s ease}
+  .kp:hover{transform:translateY(-2px);border-color:#2c4368}
+  .kp a{color:#8bd1ff;text-decoration:none;border-bottom:1px dashed #2e5388;align-self:flex-start}
+  textarea{width:100%;min-height:120px;background:#0b1524;border:1px solid #2b3a4e;border-radius:12px;color:var(--text);padding:12px}
+  small{color:#8aa1b6} footer{color:#6d8196;font-size:12px;text-align:center;padding:10px 0 24px}
+  ul.clean{margin:0; padding-left:18px} .badge{display:inline-flex;align-items:center;gap:8px;background:#0f1b2d;border:1px solid #2a3b58;border-radius:999px;padding:6px 10px;font-size:12px;color:#b9c9db}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container">
+      <div class="badge">Team building • 8 people • 2 rental cars</div>
+      <h1>Florence, Siena, San Gimignano & Pisa</h1>
+      <div class="sub">11–14 September 2025 · Lodging: Circolo Unificato – Via della Scala 68</div>
+      <div class="actions">
+        <button class="btn primary" onclick="downloadICS()">Add to calendar (.ics)</button>
+        <a class="btn ghost" href="./map.html" target="_blank">Open interactive map</a>
+        <a class="btn ghost" href="team_trip_program.pdf" target="_blank">Open printable PDF</a>
+        <button class="btn ghost" onclick="copyShare()">Copy share message</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="grid">
+      <div class="card">
+        <h3 class="title">📅 Itinerary</h3>
+        <div id="itin"></div>
+      </div>
+      <div class="card">
+        <h3 class="title">💶 Room prices per night</h3>
+        <ul class="clean">
+          <li>Matrimonial Suite: <b>€117</b></li>
+          <li>Standard Single: <b>€62</b></li>
+          <li>Economy Single: <b>€51</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card">
+        <h3 class="title">✅ Group checklist</h3>
+        <ul class="clean" id="check">
+          <li>Bring mosquito repellent (esp. for nights)</li>
+          <li>Bring sunscreen</li>
+          <li>Bring comfortable walking shoes (we’ll walk a lot)</li>
+          <li>We’ll buy water before arriving</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="title">📝 Notes / announcements</h3>
+        <textarea id="notes" placeholder="Share quick updates for the team (saved on this device)."></textarea>
+        <small>Tip: paste your WhatsApp invite link here for easy access.</small>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3 class="title">⭐ Key places (quick links + short notes)</h3>
+      <div class="keyplaces">
+        <div class="kp"><div><b>Circolo Unificato – Via della Scala 68</b> · military hotel, central.</div><a href="https://maps.google.com/?q=Via%20della%20Scala%2068%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>All’Antico Vinaio</b> · iconic schiacciata sandwiches.</div><a href="https://maps.google.com/?q=All%E2%80%99Antico%20Vinaio%20Via%20dei%20Neri%2065R%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Mercato Centrale (San Lorenzo)</b> · food hall with many choices.</div><a href="https://maps.google.com/?q=Mercato%20Centrale%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Gelateria dei Mori</b> · one of the best gelaterie.</div><a href="https://maps.google.com/?q=Gelateria%20dei%20Mori%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Duomo di Firenze</b> · Brunelleschi’s Dome.</div><a href="https://maps.google.com/?q=Cattedrale%20di%20Santa%20Maria%20del%20Fiore" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Piazza della Signoria</b> · civic heart & statues.</div><a href="https://maps.google.com/?q=Piazza%20della%20Signoria%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Ponte Vecchio</b> · medieval bridge with shops.</div><a href="https://maps.google.com/?q=Ponte%20Vecchio" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Palazzo Pitti</b> · Medici palace & Boboli.</div><a href="https://maps.google.com/?q=Palazzo%20Pitti%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Piazzale Michelangelo</b> · best city view.</div><a href="https://maps.google.com/?q=Piazzale%20Michelangelo" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Santa Maria Novella Station</b> · main station.</div><a href="https://maps.google.com/?q=Stazione%20di%20Santa%20Maria%20Novella" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>Piazza Santo Spirito</b> · lively nightlife square.</div><a href="https://maps.google.com/?q=Piazza%20Santo%20Spirito%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+        <div class="kp"><div><b>San Frediano District</b> · cool area for cocktails.</div><a href="https://maps.google.com/?q=Quartiere%20San%20Frediano%2C%20Firenze" target="_blank">Open in Google Maps ↗</a></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3 class="title">🍸 Suggested cocktail bars (no reservation)</h3>
+      <ul class="clean">
+        <li><a href="https://maps.google.com/?q=Volume%20Firenze" target="_blank">Volume (Santo Spirito)</a></li>
+        <li><a href="https://maps.google.com/?q=Tamer%C3%B2%20Piazza%20Santo%20Spirito%20Firenze" target="_blank">Tamerò (Santo Spirito)</a></li>
+        <li><a href="https://maps.google.com/?q=Mad%20Souls%20%26%20Spirits%20Firenze" target="_blank">Mad Souls & Spirits (San Frediano)</a></li>
+        <li><a href="https://maps.google.com/?q=Love%20Craft%20Firenze" target="_blank">Love Craft (San Frediano)</a></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3 class="title">🔎 Deep‑dive links</h3>
+      <div class="twoCol">
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Via%20della%20Scala%2068%20Firenze"><div style="font-weight:800">Circolo Unificato – Via della Scala 68</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=All%E2%80%99Antico%20Vinaio%20Via%20dei%20Neri%2065R%20Firenze"><div style="font-weight:800">All’Antico Vinaio</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Mercato%20Centrale%20Firenze"><div style="font-weight:800">Mercato Centrale</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Cattedrale%20di%20Santa%20Maria%20del%20Fiore"><div style="font-weight:800">Duomo & Dome</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Piazza%20della%20Signoria%20Firenze"><div style="font-weight:800">Piazza della Signoria</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Ponte%20Vecchio"><div style="font-weight:800">Ponte Vecchio</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Palazzo%20Pitti%20Firenze"><div style="font-weight:800">Palazzo Pitti</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Stazione%20di%20Santa%20Maria%20Novella"><div style="font-weight:800">SMN Station</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Piazzale%20Michelangelo"><div style="font-weight:800">Piazzale Michelangelo</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Piazza%20Santo%20Spirito%20Firenze"><div style="font-weight:800">Piazza Santo Spirito</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Quartiere%20San%20Frediano%2C%20Firenze"><div style="font-weight:800">San Frediano district</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Piazza%20del%20Campo%20Siena"><div style="font-weight:800">Siena – Piazza del Campo</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Altezza%20Winery%20San%20Gimignano"><div style="font-weight:800">Altezza Winery</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Piazza%20della%20Cisterna%20San%20Gimignano"><div style="font-weight:800">San Gimignano – Piazza della Cisterna</div><div>Explore ↗</div></a>
+        <a class="place" target="_blank" href="https://maps.google.com/?q=Leaning%20Tower%20of%20Pisa"><div style="font-weight:800">Pisa – Leaning Tower</div><div>Explore ↗</div></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>Static site · host on Netlify / Vercel / GitHub Pages.</footer>
+
+<script>
+  const itinerary = [
+    { day: "Thu 11 Sep – Arrival & first taste of Florence", items:[
+      ["15:30","Land at Pisa Airport (PSA)"],
+      ["16:00","Pick up cars & drive to Florence (~1h15)"],
+      ["17:30","Check‑in – Circolo Unificato – Via della Scala 68"],
+      ["18:00–19:30","Easy stroll: Signoria, Ponte Vecchio, Cathedral exterior"],
+      ["20:00","Dinner – Canto de’ Nelli (San Lorenzo, booked)"],
+      ["22:00","After‑dinner – Santo Spirito (Volume / Tamerò)"],
+    ]},
+    { day: "Fri 12 Sep – Historic Florence & Brunelleschi’s Dome", items:[
+      ["09:00–12:00","Guided walking tour (historic centre)"],
+      ["12:00–12:45","Climb Brunelleschi’s Dome (Brunelleschi Pass €30)"],
+      ["13:00","Lunch – Mercato Centrale (San Lorenzo)"],
+      ["15:00–17:00","Walk & aperitivo at Piazzale Michelangelo"],
+      ["20:00","Dinner – TBD"],
+      ["22:00","After‑dinner – San Frediano (Mad Souls & Spirits / Love Craft)"],
+    ]},
+    { day: "Sat 13 Sep – Siena, Winery aperitivo & San Gimignano", items:[
+      ["08:00","Drive to Siena"],
+      ["09:30–12:30","Explore Siena: Piazza del Campo, Cathedral"],
+      ["12:30–14:00","Lunch in Siena (typical trattoria)"],
+      ["14:00–15:00","Drive to San Gimignano"],
+      ["15:00–16:30","San Gimignano: Piazza della Cisterna, towers, gelato"],
+      ["16:30–16:50","Short drive to winery"],
+      ["17:00–18:30","Wine tasting & aperitivo – Altezza Winery (BOOKED)"],
+      ["21:00","Free live jazz – Piazza del Carmine (Firenze Jazz Festival)"],
+    ]},
+    { day: "Sun 14 Sep – Pisa & departure", items:[
+      ["09:00","Drive to Pisa"],
+      ["10:15–13:00","Piazza dei Miracoli: Leaning Tower (optional climb), Cathedral, Baptistery"],
+      ["13:15","Lunch in Pisa city centre"],
+      ["15:00–18:00","Borgo Stretto, Lungarno – coffee & chill"],
+      ["19:00","Return cars at Pisa Airport (PSA)"],
+      ["20:10","Flight home"],
+    ]},
+  ];
+
+  function renderItin(){
+    const wrap = document.getElementById('itin');
+    itinerary.forEach(d=>{
+      const card = document.createElement('div'); card.className='card'; card.style.background='linear-gradient(180deg,#0f1828,#0c1422)'; card.style.marginBottom='12px';
+      card.innerHTML = '<div class="pill">'+d.day+'</div>';
+      d.items.forEach(([t,txt])=>{
+        const row = document.createElement('div'); row.className='row';
+        row.innerHTML = '<div class="time">'+t+'</div><div>'+txt+'</div>';
+        card.appendChild(row);
+      });
+      wrap.appendChild(card);
+    });
+  }
+  function downloadICS(){
+    const pad=n=>String(n).padStart(2,'0');
+    const fmt=d=>d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+'00Z';
+    const mk=(s,a,b)=>['BEGIN:VEVENT','UID:'+Math.random().toString(36).slice(2)+'@teamtrip','DTSTAMP:'+fmt(new Date()),'DTSTART:'+fmt(a),'DTEND:'+fmt(b),'SUMMARY:'+s,'END:VEVENT'].join('\n');
+    const events=[
+      mk('Arrive PSA & drive to Florence', new Date('2025-09-11T13:30:00Z'), new Date('2025-09-11T16:30:00Z')),
+      mk('Guided tour + Brunelleschi’s Dome + lunch at Mercato Centrale', new Date('2025-09-12T07:00:00Z'), new Date('2025-09-12T12:45:00Z')),
+      mk('Siena + Altezza Winery (17:00) + San Gimignano + Jazz', new Date('2025-09-13T06:00:00Z'), new Date('2025-09-13T21:00:00Z')),
+      mk('Pisa visit & flight', new Date('2025-09-14T07:00:00Z'), new Date('2025-09-14T18:10:00Z')),
+    ];
+    const body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//TeamTrip//Florence//EN',...events,'END:VCALENDAR'].join('\n');
+    const url=URL.createObjectURL(new Blob([body],{type:'text/calendar;charset=utf-8'}));
+    const a=document.createElement('a'); a.href=url; a.download='team-trip-florence.ics'; a.click(); URL.revokeObjectURL(url);
+  }
+  function copyShare(){
+    const base = location.origin + location.pathname.replace(/index\.html?$/, '');
+    const msg = `Team Trip (11–14 Sep 2025) – Itinerary: ${base}index.html  – Map: ${base}map.html`;
+    navigator.clipboard.writeText(msg).then(()=>alert('Share message copied!')).catch(()=>{});
+  }
+  function initNotes(){
+    const el=document.getElementById('notes'); el.value=localStorage.getItem('trip_notes')||''; el.addEventListener('input',()=>localStorage.setItem('trip_notes', el.value));
+  }
+  renderItin(); initNotes();
+</script>
+</body>
+</html>
