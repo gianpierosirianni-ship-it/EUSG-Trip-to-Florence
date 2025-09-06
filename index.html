@@ -55,6 +55,22 @@
   </div>
 
   <div class="wrap">
+
+  <div class="card" id="weather" style="margin:18px 0">
+    <h3 class="title">☀️ Live weather (Sep 11–14)</h3>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">
+      <label for="wxloc"><b>Location:</b></label>
+      <select id="wxloc" style="background:#0b1524;color:#edf2f7;border:1px solid #2b3a4e;border-radius:10px;padding:8px">
+        <option value="43.7696,11.2558,Florence">Florence</option>
+        <option value="43.3188,11.3308,Siena">Siena</option>
+        <option value="43.4671,11.0420,San Gimignano">San Gimignano</option>
+        <option value="43.7160,10.4017,Pisa">Pisa</option>
+      </select>
+      <small style="opacity:.8">Source: <a href="https://open-meteo.com/en/docs" target="_blank" style="color:#8bd1ff">Open‑Meteo API</a></small>
+    </div>
+    <div id="wxgrid" class="twoCol"></div>
+  </div>
+
     <div class="grid">
       <div class="card">
         <h3 class="title">📅 Itinerary</h3>
@@ -212,7 +228,62 @@
   function initNotes(){
     const el=document.getElementById('notes'); el.value=localStorage.getItem('trip_notes')||''; el.addEventListener('input',()=>localStorage.setItem('trip_notes', el.value));
   }
-  renderItin(); initNotes();
+  renderItin(); initNotes(); fetchWeather();
+
+  // --- Live Weather via Open-Meteo ---
+  function renderWeather(data, place){
+    const grid = document.getElementById('wxgrid');
+    grid.innerHTML='';
+    const days = data.daily.time;
+    const tmax = data.daily.temperature_2m_max;
+    const tmin = data.daily.temperature_2m_min;
+    const pprob = data.daily.precipitation_probability_max || [];
+    const psum  = data.daily.precipitation_sum || [];
+    const wcode = data.daily.weathercode || [];
+    const wwind = data.daily.windspeed_10m_max || [];
+    const emoji = code => {
+      // Simple mapping per WMO weather codes
+      if([0].includes(code)) return "☀️";
+      if([1,2].includes(code)) return "🌤️";
+      if([3].includes(code)) return "⛅";
+      if([45,48].includes(code)) return "🌫️";
+      if([51,53,55,56,57].includes(code)) return "🌦️";
+      if([61,63,65,66,67,80,81,82].includes(code)) return "🌧️";
+      if([71,73,75,77,85,86].includes(code)) return "❄️";
+      if([95,96,99].includes(code)) return "⛈️";
+      return "🌥️";
+    };
+    days.forEach((d,i)=>{
+      const card = document.createElement('div');
+      card.className='kp';
+      const prob = pprob[i] != null ? ` · <span style="opacity:.9">Rain prob: <b>${pprob[i]}%</b></span>` : '';
+      const rain = psum[i] != null ? ` · <span style="opacity:.9">Rain: <b>${psum[i]} mm</b></span>` : '';
+      const wind = wwind[i] != null ? ` · <span style="opacity:.9">Wind: <b>${wwind[i]} km/h</b></span>` : '';
+      card.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <div><b>${new Date(d).toLocaleDateString('en-GB',{weekday:'short', day:'2-digit', month:'short'})}</b> – ${place}</div>
+          <div style="font-size:24px">${emoji(wcode[i])}</div>
+        </div>
+        <div style="margin-top:4px">Max <b>${Math.round(tmax[i])}°C</b> · Min <b>${Math.round(tmin[i])}°C</b>${prob}${rain}${wind}</div>`;
+      grid.appendChild(card);
+    });
+  }
+  async function fetchWeather(){
+    const sel = document.getElementById('wxloc');
+    const [lat,lon,name] = sel.value.split(',');
+    // Trip dates
+    const start = '2025-09-11';
+    const end   = '2025-09-14';
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,windspeed_10m_max&timezone=Europe%2FRome&start_date=${start}&end_date=${end}`;
+    try{
+      const res = await fetch(url);
+      const data = await res.json();
+      renderWeather(data, name);
+    }catch(e){
+      document.getElementById('wxgrid').innerHTML = '<div class="kp">Weather unavailable right now.</div>';
+    }
+  }
+  document.addEventListener('change', (e)=>{ if(e.target && e.target.id==='wxloc') fetchWeather(); });
+
 </script>
 </body>
 </html>
